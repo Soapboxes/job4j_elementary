@@ -34,5 +34,4 @@ public class Converter {
         float dollarToEuro = Converter.dollarToEuro(1);
         System.out.println("1 dollar " + dollarToEuro + " euro.");
     }
-
 }
