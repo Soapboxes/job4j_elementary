@@ -12,11 +12,6 @@ public class Multiple {
         System.out.println("1 * 8 = 8");
         System.out.println("1 * 9 = 9");
         System.out.println("1 * 10 = 10");
-        double amountBacteria = 10000000;
-        double distanceUniverse = 640640000;
-        float heightInMeters = 1.8f;
-        System.out.println(heightInMeters);
-        System.out.println(amountBacteria);
-        System.out.println(distanceUniverse);
+
     }
 }
