@@ -7,9 +7,9 @@ public class Point {
         double second = Math.pow((y2 - y1), 2);
         double rsl = Math.sqrt(first + second);
         return rsl;
-        */
         double rsl = Math.sqrt((Math.pow((x2 - x1), 2)) + (Math.pow((y2 - y1), 2)));
-        return rsl;
+         */
+        return Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
     }
 
     public static void main(String[] args) {
