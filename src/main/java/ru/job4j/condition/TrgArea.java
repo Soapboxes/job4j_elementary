@@ -5,7 +5,7 @@ public class TrgArea {
         double sumP = (a + b + c) / 2;
         return Math.sqrt(sumP * (sumP - a) * (sumP - b) * (sumP - c));
         /* пример в одну строку
-        //return Math.sqrt((a + b + c) / 2) * (((a + b + c) / 2) - a) * (((a + b + c) / 2) - b) * (((a + b + c) / 2) - c);
+        return Math.sqrt((a + b + c) / 2) * (((a + b + c) / 2) - a) * (((a + b + c) / 2) - b) * (((a + b + c) / 2) - c);
          */
     }
 
