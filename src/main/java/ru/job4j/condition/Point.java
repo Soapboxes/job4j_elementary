@@ -24,6 +24,5 @@ public class Point {
         System.out.println("result (1, 0) to (2, 2) " + dF.format(resultThree));
         double resultFour = Point.distance(10, 0, 2, 0);
         System.out.println("result (10, 0) to (2, 2) " + dF.format(resultFour));
-
     }
 }
