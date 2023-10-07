@@ -7,7 +7,8 @@ public class Fitness {
             ivan *= 3;
             nik *= 2;
             if (ivan * month >= nik * month) {
-            month++;
+
+                month++;
             }
         }
         return month;
