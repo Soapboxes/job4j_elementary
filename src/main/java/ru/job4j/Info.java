@@ -2,7 +2,6 @@ package ru.job4j;
 
 public class Info {
     public static void main(String[] args) {
-
         double d = 121.19;
         byte b = (byte) d;
         char c1 = '\u0035';
