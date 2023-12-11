@@ -7,9 +7,14 @@ public class Max {
         return result;
     }
 
+    public static int max(int left, int right, int first, int second) {
+        return max(max(left, right), max(first, second));
+    }
+
     public static void main(String[] args) {
-        System.out.println(Max.max(1, 2));
-        System.out.println(Max.max(3, 1));
-        System.out.println(Max.max(4, 4));
+        Max max = new Max();
+        Max max1 = new Max();
+        System.out.println(max.max(1, 2));
+        System.out.println(max1.max(1, 2, 3, 4));
     }
 }
