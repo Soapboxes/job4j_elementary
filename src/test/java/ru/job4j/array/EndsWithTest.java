@@ -1,6 +1,7 @@
 package ru.job4j.array;
 
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class EndsWithTest {
@@ -17,6 +18,14 @@ public class EndsWithTest {
         char[] word = {'H', 'e', 'l', 'l', 'o'};
         char[] post = {'l', 'a'};
         boolean result = EndsWith.endsWith(word, post);
+        assertThat(result).isFalse();
+    }
+
+    @Test
+    public void testPrefixLongerThanWord() {
+        char[] word = {'H', 'e', 'l', 'l', 'o'};
+        char[] pref = {'H', 'e', 'l', 'l', 'o', 'o'};
+        boolean result = ArrayChar.startsWith(word, pref);
         assertThat(result).isFalse();
     }
 }

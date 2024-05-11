@@ -36,4 +36,12 @@ public class EqLastTest {
         boolean result = EqLast.check(left, right);
         assertThat(result).isFalse();
     }
+
+    @Test
+    public void testRightArrayIsEmpty() {
+        int[] left = {1, 2, 3};
+        int[] right = {};
+        boolean result = EqLast.check(left, right);
+        assertThat(result).isFalse();
+    }
 }

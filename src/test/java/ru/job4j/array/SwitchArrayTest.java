@@ -3,6 +3,7 @@ package ru.job4j.array;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class SwitchArrayTest {
     @Test
@@ -53,5 +54,15 @@ class SwitchArrayTest {
         int[] result = SwitchArray.swap(input, source, dest);
         int[] expected = {1, 2, 3, 5, 4};
         assertThat(result).containsExactly(expected);
+    }
+
+    @Test
+    public void whenSwapSameElements() {
+        int[] input = {1, 2, 3, 4};
+        int source = 1;
+        int dest = 1;
+        int[] expected = {1, 2, 3, 4};
+        int[] result = SwitchArray.swap(input, source, dest);
+        assertArrayEquals(expected, result);
     }
 }

@@ -2,11 +2,10 @@ package ru.job4j.condition;
 
 public class Greeting {
     public static void main(String[] args) {
-        String idea = "I like Java! ";
-        System.out.println(idea);
-        idea += "But I am a newbie. ";
         int year = 2023;
-        idea += year;
-        System.out.println(idea);
-        }
+        StringBuilder idea = new StringBuilder("I like Java! ");
+        idea.append("But I am a newbie. ");
+        idea.append(String.valueOf(year));
+        System.out.println(idea.toString());
+    }
 }

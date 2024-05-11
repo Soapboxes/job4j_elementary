@@ -8,5 +8,9 @@ public class LengthArrayArrays {
                     "Размер вложенного массива равен: "
                             + numbers[i].length);
         }
+        for (int[] innerArray : numbers) {
+            System.out.println("Размер вложенного массива равен: "
+                    + innerArray.length);
+        }
     }
 }

@@ -10,7 +10,7 @@ class ConverterTest {
     void whenConvert140RblThen2Euro() {
         float in = 140;
         float expected = 2;
-        float out = Converter.rubleToEuro(in);
+        float out = Converter.convertCurrency(in, 70f);
         float eps = 0.0001f;
         assertThat(out).isEqualTo(expected, withPrecision(eps));
     }
@@ -19,7 +19,7 @@ class ConverterTest {
     void whenConvert140RblThen2dot3333Dollars() {
         float in = 140;
         float expected = 2.3333f;
-        float out = Converter.rubleToDollar(in);
+        float out = Converter.convertCurrency(in, 60f);
         float eps = 0.0001f;
         assertThat(out).isEqualTo(expected, withPrecision(eps));
     }
@@ -28,8 +28,9 @@ class ConverterTest {
     void whenConvert140RblThen10dot5263Yuan() {
         float in = 140;
         float expected = 10.5263f;
-        float out = Converter.rubleToYuan(in);
+        float out = Converter.convertCurrency(in, 13.3f);
         float eps = 0.0001f;
         assertThat(out).isEqualTo(expected, withPrecision(eps));
     }
 }
+

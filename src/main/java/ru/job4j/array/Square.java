@@ -2,11 +2,14 @@ package ru.job4j.array;
 
 public class Square {
     public static int[] calculate(int bound) {
-        int[] rst = new int[bound];
-        for (int index = 0; index < bound; index++) {
-            rst[index] = index * index;
+        int[] results = new int[bound];
+        if (bound < 0) {
+            throw new IllegalArgumentException("bound должен быть неотрицательным");
         }
-        return rst;
+        for (int index = 0; index < bound; index++) {
+            results[index] = index * index;
+        }
+        return results;
     }
 
     public static void main(String[] args) {

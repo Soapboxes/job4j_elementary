@@ -5,10 +5,10 @@ public class Liken {
         int first = 10;
         int second = 9;
         boolean result = first > second;
-        System.out.println(result);
+        System.out.println("First number is greater than second: " + result);
         result = first < second;
-        System.out.println(result);
+        System.out.println("First number is less than second: " + result);
         result = first == second;
-        System.out.println(result);
+        System.out.println("First number is equal to second: " + result);
     }
 }

@@ -2,6 +2,7 @@ package ru.job4j.array;
 
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class MinDiapasonTest {
     @Test
@@ -32,5 +33,25 @@ public class MinDiapasonTest {
         int result = MinDiapason.findMin(array, start, finish);
         int expected = 2;
         assertThat(result).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenExceptionWhenStartIndexIsMinus() {
+        int[] array = new int[]{10, 5, 3, 1};
+        int start = -1;
+        int finish = 3;
+        assertThrows(ArrayIndexOutOfBoundsException.class, () -> {
+            MinDiapason.findMin(array, start, finish);
+        });
+    }
+
+    @Test
+    public void whenExceptionWhenStartIndexIsGreaterThanFinishIndex() {
+        int[] array = new int[]{10, 5, 3, 1};
+        int start = 3;
+        int finish = 2;
+        assertThrows(IllegalArgumentException.class, () -> {
+            MinDiapason.findMin(array, start, finish);
+        });
     }
 }

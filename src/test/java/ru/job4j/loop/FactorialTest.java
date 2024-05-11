@@ -1,7 +1,9 @@
 package ru.job4j.loop;
 
 import org.junit.jupiter.api.Test;
+
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class FactorialTest {
     @Test
@@ -34,5 +36,21 @@ class FactorialTest {
         int n = 6;
         int out = Factorial.calc(n);
         assertThat(out).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenReturnOneForInputZero() {
+        int expected = 1;
+        int n = 0;
+        int out = Factorial.calc(n);
+        assertThat(out).isEqualTo(expected);
+    }
+
+    @Test
+    public void whenThrowExceptionForNegativeInput() {
+        int n = -1;
+        assertThrows(IllegalArgumentException.class, () -> {
+            Factorial.calc(n);
+        });
     }
 }
