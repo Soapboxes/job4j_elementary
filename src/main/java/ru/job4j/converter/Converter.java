@@ -14,7 +14,6 @@ public class Converter {
 
     public static void main(String[] args) {
         float euro = Converter.convertCurrency(140, EURO_RATE);
-        //float euro = Converter.rubleToEuro(140);
         System.out.println(String.format("140 rubles are %.2f euro.", euro));
         float dollar = Converter.convertCurrency(140, DOLLAR_RATE);
         System.out.println(String.format("140 rubles are %.2f dollar.", dollar));
