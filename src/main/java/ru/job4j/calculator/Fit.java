@@ -2,18 +2,24 @@ package ru.job4j.calculator;
 
 public class Fit {
 
-    public static double calcManWeight(double heightMan) {
-        double rsl = (heightMan - 100) * 1.15;
-        return rsl;
+    private static final double BASE_MALE_HEIGHT = 100;
+    private static final double BASE_FEMALE_HEIGHT = 110;
+    private static final double WEIGHT_FACTOR = 1.15;
+
+    public static double calculateIdealWeight(double height, double baseHeight) {
+        return (height - baseHeight) * WEIGHT_FACTOR;
     }
 
-    public static double calcWomanWeight(double heightWoman) {
-        double rsl = (heightWoman - 110) * 1.15;
-        return rsl;
+    public static double calcManWeight(double height) {
+        return calculateIdealWeight(height, BASE_MALE_HEIGHT);
+    }
+
+    public static double calcWomanWeight(double height) {
+        return calculateIdealWeight(height, BASE_FEMALE_HEIGHT);
     }
 
     public static void main(String[] args) {
-        int heightMan = 180;
+        int heightMan = 184;
         int heightWoman = 170;
         double man = Fit.calcManWeight(heightMan);
         double woman = Fit.calcWomanWeight(heightWoman);
