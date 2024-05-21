@@ -3,6 +3,7 @@ package ru.job4j.array;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatThrownBy;
 
 public class MachineTest {
     @Test
@@ -42,11 +43,20 @@ public class MachineTest {
     }
 
     @Test
-    public void whenMoneyLessThanPrice() {
-        int money = 10;
-        int price = 20;
+    public void whenMoneyGreaterThanPriceWithSingleCoins() {
+        int money = 50;
+        int price = 47;
         int[] result = Machine.change(money, price);
-        int[] expected = {};
+        int[] expected = {2, 1};
         assertThat(result).containsExactly(expected);
+    }
+
+    @Test
+    public void whenMoneyIsLessThanPriceThenException() {
+        int money = 30;
+        int price = 50;
+        assertThatThrownBy(() -> Machine.change(money, price))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("Money must be greater than or equal to price");
     }
 }

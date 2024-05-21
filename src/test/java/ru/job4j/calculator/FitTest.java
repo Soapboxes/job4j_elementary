@@ -37,4 +37,36 @@ class FitTest {
         double out = Fit.calcWomanWeight(in);
         assertThat(out).isEqualTo(expected, withPrecision(0.01));
     }
+
+    @Test
+    public void whenHeightMan184ThenIdealWeight() {
+        double height = 184;
+        double expected = 96.60;
+        double actual = Fit.calcManWeight(height);
+        assertThat(actual).isCloseTo(expected, within(0.01));
+    }
+
+    @Test
+    public void whenHeightWoman170ThenIdealWeight() {
+        double height = 170;
+        double expected = 69.00;
+        double actual = Fit.calcWomanWeight(height);
+        assertThat(actual).isCloseTo(expected, within(0.01));
+    }
+
+    @Test
+    public void whenHeightManIsNegativeThenException() {
+        double height = -184;
+        assertThatThrownBy(() -> Fit.calcManWeight(height))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("Height must be positive");
+    }
+
+    @Test
+    public void whenHeightWomanIsNegativeThenException() {
+        double height = -170;
+        assertThatThrownBy(() -> Fit.calcWomanWeight(height))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessage("Height must be positive");
+    }
 }
